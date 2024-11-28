@@ -1,165 +1,157 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Chart } from "../components/Chart";
 ---
 
-<Layout title="Astro + shadcn/ui">
+<Layout title="CNN Black Box">
 	<section class="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
 		<div class="max-w-[64rem] flex flex-col items-center gap-4 text-center mx-auto">
-			<h1
-				class="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
-			>
-				Build beautiful websites with Astro 5 and shadcn/ui
+			<h1 class="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+				Explora las Redes Neuronales Convolucionales (CNNs)
 			</h1>
-			<p
-				class="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8"
-			>
-				A beautiful, modern website template built with Astro and
-				shadcn/ui. Featuring dark mode, responsive design, and great
-				typography.
+			<p class="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+				Descubre cómo las CNNs procesan imágenes, desde la convolución hasta la predicción. Aprende cada paso con visualizaciones y ejemplos interactivos.
 			</p>
 			<div class="space-x-4">
-				<a
-					href="https://ui.shadcn.com"
-					class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
-				>
-					Documentation
+				<a href="#introduccion" class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90">
+					Empezar
 				</a>
-				<a
-					href="https://github.com/agentc-app/astro-shadcn"
-					class="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
-				>
-					GitHub
+				<a href="#aplicaciones" class="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
+					Aplicaciones
 				</a>
 			</div>
 		</div>
 	</section>
 
-	<section class="space-y-6 py-8 md:py-12 lg:py-24">
-		<Chart client:load />
-	</section>
-
-	<section class="space-y-6 py-8 md:py-12 lg:py-24">
-		<div class="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-			<p
-				class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
-			>
-				Optimized for the best possible performance and accessibility
+	<section id="introduccion" class="space-y-6 py-8 md:py-12 lg:py-24">
+		<div class="max-w-[64rem] mx-auto text-center">
+			<h2 class="text-3xl font-bold">Sube tu Imagen</h2>
+			<p class="text-lg text-muted-foreground mt-4">
+				Elige una imagen para procesarla a través de las etapas de una CNN.
 			</p>
-		</div>
-		<div class="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2 md:grid-cols-4 items-start">
-			<div
-				class="relative overflow-hidden rounded-lg border bg-background p-2"
-			>
-				<div
-					class="flex h-[150px] flex-col items-center justify-center rounded-md p-6 text-center"
-				>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						class="h-12 w-12 mb-4 text-green-500"
-						><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg
-					>
-					<div class="space-y-2">
-						<h3 class="font-bold text-2xl">100</h3>
-						<p class="text-sm text-muted-foreground">Performance</p>
-					</div>
-				</div>
-			</div>
-
-			<div
-				class="relative overflow-hidden rounded-lg border bg-background p-2"
-			>
-				<div
-					class="flex h-[150px] flex-col items-center justify-center rounded-md p-6 text-center"
-				>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						class="h-12 w-12 mb-4 text-green-500"
-						><circle cx="12" cy="12" r="10"></circle><path
-							d="m9 12 2 2 4-4"></path></svg
-					>
-					<div class="space-y-2">
-						<h3 class="font-bold text-2xl">100</h3>
-						<p class="text-sm text-muted-foreground">
-							Accessibility
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div
-				class="relative overflow-hidden rounded-lg border bg-background p-2"
-			>
-				<div
-					class="flex h-[150px] flex-col items-center justify-center rounded-md p-6 text-center"
-				>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						class="h-12 w-12 mb-4 text-green-500"
-						><path
-							d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"
-						></path></svg
-					>
-					<div class="space-y-2">
-						<h3 class="font-bold text-2xl">100</h3>
-						<p class="text-sm text-muted-foreground">
-							Best Practices
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div
-				class="relative overflow-hidden rounded-lg border bg-background p-2"
-			>
-				<div
-					class="flex h-[150px] flex-col items-center justify-center rounded-md p-6 text-center"
-				>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						class="h-12 w-12 mb-4 text-green-500"
-						><path
-							d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"
-						></path><line x1="4" y1="22" x2="4" y2="15"></line></svg
-					>
-					<div class="space-y-2">
-						<h3 class="font-bold text-2xl">100</h3>
-						<p class="text-sm text-muted-foreground">SEO</p>
-					</div>
-				</div>
+			<div class="mt-6 flex justify-center">
+				<label class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow cursor-pointer transition-colors hover:bg-primary/90">
+					<input type="file" id="upload-image" accept="image/*" class="hidden" />
+					Subir Imagen
+				</label>
 			</div>
 		</div>
 	</section>
+
+	<section id="paso1" class="space-y-6 py-8 md:py-12 lg:py-24 hidden">
+		<div class="max-w-[64rem] mx-auto text-center">
+			<h2 class="text-3xl font-bold">Paso 1: La Convolución</h2>
+			<p class="text-lg text-muted-foreground mt-4">
+				En este paso, aplicamos filtros a las imágenes para identificar características clave como bordes o texturas.
+			</p>
+			<div id="cnn-container" class="mt-4 hidden"></div>
+			<div class="mt-6 flex justify-center space-x-4">
+				<button id="btn-convolution" class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90">
+					Aplicar Convolución
+				</button>
+			</div>
+		</div>
+	</section>
+
+	<section id="relu" class="space-y-6 py-8 md:py-12 lg:py-24 hidden">
+		<div class="max-w-[64rem] mx-auto text-center">
+			<h2 class="text-3xl font-bold">Paso 2: Función de Activación (ReLU)</h2>
+			<p class="text-lg text-muted-foreground mt-4">
+				La función ReLU elimina valores negativos de las matrices generadas por la convolución.
+			</p>
+			<div id="relu-container" class="mt-4 hidden"></div>
+			<div class="mt-6 flex justify-center space-x-4">
+				<button id="btn-relu" class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90">
+					Aplicar ReLU
+				</button>
+			</div>
+		</div>
+	</section>
+
+	<section id="maxpool" class="space-y-6 py-8 md:py-12 lg:py-24 hidden">
+		<div class="max-w-[64rem] mx-auto text-center">
+			<h2 class="text-3xl font-bold">Paso 3: MaxPooling</h2>
+			<p class="text-lg text-muted-foreground mt-4">
+				El MaxPooling reduce la dimensión de las matrices al conservar solo los valores máximos.
+			</p>
+			<div id="max-pooling-container" class="mt-4 hidden"></div>
+			<div class="mt-6 flex justify-center space-x-4">
+				<button id="btn-maxpool" class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90">
+					Aplicar MaxPooling
+				</button>
+			</div>
+		</div>
+	</section>
+	<!-- Script Section -->
+	<script src="/scripts/cnn-black-box.js" defer></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const showContainer = (id:any) => {
+				document.getElementById(id)?.classList.remove('hidden');
+			};
+	
+			const clearContainer = (id:any) => {
+				const container = document.getElementById(id);
+				if (container) {
+					container.innerHTML = ''; // Limpia el contenido previo
+				}
+			};
+	
+			document.getElementById('upload-image')?.addEventListener('change', (event) => {
+				const file = event?.target?.files[0];
+				if (file) {
+					const reader = new FileReader();
+					reader.onload = () => {
+						const imageSrc = reader.result;
+	
+						// Limpia y muestra el contenedor del primer paso
+						clearContainer('cnn-container');
+						document.getElementById('cnn-container')?.classList.add('hidden');
+						clearContainer('relu-container');
+						document.getElementById('relu-container')?.classList.add('hidden');
+						clearContainer('max-pooling-container');
+						document.getElementById('max-pooling-container')?.classList.add('hidden');
+						showContainer('paso1');
+	
+						if (window.CNNBlackBox) {
+							window.CNNBlackBox.startConvolution({
+								container: 'cnn-container',
+								imageSrc: imageSrc,
+								filter: [0.3, -0.21, 0.07, -0.19, 0.1, -0.01, -0.04, -0.02, -0.08],
+							});
+	
+							window.CNNBlackBox.startReLU({
+								container: 'relu-container',
+								imageSrc: imageSrc,
+								filter: [0.3, -0.21, 0.07, -0.19, 0.1, -0.01, -0.04, -0.02, -0.08],
+							});
+	
+							window.CNNBlackBox.startMaxPooling({
+								container: 'max-pooling-container',
+								imageSrc: imageSrc,
+								filter: [0.3, -0.21, 0.07, -0.19, 0.1, -0.01, -0.04, -0.02, -0.08],
+							});
+						} else {
+							console.error('CNNBlackBox no está definido.');
+						}
+					};
+					reader.readAsDataURL(file);
+				}
+			});
+	
+			document.getElementById('btn-convolution')?.addEventListener('click', () => {
+				showContainer('relu');
+				document.getElementById('cnn-container')?.classList.remove('hidden');
+			});
+	
+			document.getElementById('btn-relu')?.addEventListener('click', () => {
+				showContainer('maxpool');
+				document.getElementById('relu-container')?.classList.remove('hidden');
+			});
+	
+			document.getElementById('btn-maxpool')?.addEventListener('click', () => {
+				document.getElementById('max-pooling-container')?.classList.remove('hidden');
+			});
+		});
+	</script>
+	
 </Layout>
