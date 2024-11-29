@@ -97,41 +97,44 @@ import Layout from "../layouts/Layout.astro";
 			};
 	
 			document.getElementById('upload-image')?.addEventListener('change', (event) => {
-				const file = event?.target?.files[0];
+				const target = event.target as HTMLInputElement;
+				const file = target?.files?.[0]; 				
 				if (file) {
 					const reader = new FileReader();
 					reader.onload = () => {
-						const imageSrc = reader.result;
+						if (typeof reader.result === 'string') {
+							const imageSrc = reader.result;
 	
-						// Limpia y muestra el contenedor del primer paso
-						clearContainer('cnn-container');
-						document.getElementById('cnn-container')?.classList.add('hidden');
-						clearContainer('relu-container');
-						document.getElementById('relu-container')?.classList.add('hidden');
-						clearContainer('max-pooling-container');
-						document.getElementById('max-pooling-container')?.classList.add('hidden');
-						showContainer('paso1');
-	
-						if (window.CNNBlackBox) {
-							window.CNNBlackBox.startConvolution({
-								container: 'cnn-container',
-								imageSrc: imageSrc,
-								filter: [0.3, -0.21, 0.07, -0.19, 0.1, -0.01, -0.04, -0.02, -0.08],
-							});
-	
-							window.CNNBlackBox.startReLU({
-								container: 'relu-container',
-								imageSrc: imageSrc,
-								filter: [0.3, -0.21, 0.07, -0.19, 0.1, -0.01, -0.04, -0.02, -0.08],
-							});
-	
-							window.CNNBlackBox.startMaxPooling({
-								container: 'max-pooling-container',
-								imageSrc: imageSrc,
-								filter: [0.3, -0.21, 0.07, -0.19, 0.1, -0.01, -0.04, -0.02, -0.08],
-							});
-						} else {
-							console.error('CNNBlackBox no está definido.');
+							// Limpia y muestra el contenedor del primer paso
+							clearContainer('cnn-container');
+							document.getElementById('cnn-container')?.classList.add('hidden');
+							clearContainer('relu-container');
+							document.getElementById('relu-container')?.classList.add('hidden');
+							clearContainer('max-pooling-container');
+							document.getElementById('max-pooling-container')?.classList.add('hidden');
+							showContainer('paso1');
+
+							if (window.CNNBlackBox) {
+								window.CNNBlackBox.startConvolution({
+									container: 'cnn-container',
+									imageSrc: imageSrc,
+									filter: [0.3, -0.21, 0.07, -0.19, 0.1, -0.01, -0.04, -0.02, -0.08],
+								});
+
+								window.CNNBlackBox.startReLU({
+									container: 'relu-container',
+									imageSrc: imageSrc,
+									filter: [0.3, -0.21, 0.07, -0.19, 0.1, -0.01, -0.04, -0.02, -0.08],
+								});
+
+								window.CNNBlackBox.startMaxPooling({
+									container: 'max-pooling-container',
+									imageSrc: imageSrc,
+									filter: [0.3, -0.21, 0.07, -0.19, 0.1, -0.01, -0.04, -0.02, -0.08],
+								});
+							} else {
+								console.error('CNNBlackBox no está definido.');
+							}
 						}
 					};
 					reader.readAsDataURL(file);

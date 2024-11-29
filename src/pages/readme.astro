@@ -1,12 +1,98 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getReadme } from "../lib/markdown";
-
-const readme = await getReadme();
 ---
 
-<Layout title="README - Astro + shadcn/ui">
-  <div class="prose dark:prose-invert max-w-none">
-    <article set:html={readme} />
-  </div>
-</Layout> 
+<Layout title="CNN Black Box - Documentación">
+	<section class="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
+		<div class="max-w-[64rem] flex flex-col items-center gap-4 text-center mx-auto">
+			<h1 class="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+				Documentación de CNNBlackBox
+			</h1>
+			<p class="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+				Aprende a integrar y utilizar la librería CNNBlackBox para visualizar y aplicar transformaciones en imágenes con redes neuronales convolucionales.
+			</p>
+			<div class="space-x-4">
+				<a href="#inicio" class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90">
+					Inicio
+				</a>
+				<a href="#docs" class="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
+					Docs
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section id="docs" class="space-y-6 py-8 md:py-12 lg:py-24">
+		<div class="max-w-[64rem] mx-auto">
+			<h2 class="text-3xl font-bold text-center">Introducción a CNNBlackBox</h2>
+			<p class="text-lg text-muted-foreground mt-4 text-center">
+				CNNBlackBox es una biblioteca para la visualización interactiva de pasos básicos en redes neuronales convolucionales (CNN). Puedes aplicarla en proyectos educativos o demostraciones técnicas.
+			</p>
+
+			<div class="mt-10 space-y-8">
+				<div>
+					<h3 class="text-2xl font-semibold">Instalación</h3>
+					<p class="text-lg text-muted-foreground mt-2">
+						Para comenzar a usar CNNBlackBox, importa el archivo JavaScript en tu proyecto:
+					</p>
+					<div class="mt-4 rounded-md">
+						<pre class="language-html text-xs bg-[#2b2b2b] text-[#f8f8f2] p-3 rounded-md overflow-auto">
+							<code>
+								&lt;script src="/scripts/cnn-black-box.js" defer&gt;&lt;/script&gt;
+							</code>
+						</pre>
+					</div>
+				</div>
+
+				<div>
+					<h3 class="text-2xl font-semibold">Uso Básico</h3>
+					<p class="text-lg text-muted-foreground mt-2">
+						Utiliza las funciones disponibles para procesar imágenes paso a paso. Por ejemplo, para aplicar una convolución:
+					</p>
+					<div class="mt-4 rounded-md">
+						<pre class="language-javascript text-xs bg-[#2b2b2b] text-[#f8f8f2] p-3 rounded-md overflow-auto">
+							<code>
+								window.CNNBlackBox.startConvolution(&lbrace;<br />
+								&nbsp;&nbsp;container: 'cnn-container',<br />
+								&nbsp;&nbsp;imageSrc: 'ruta_de_tu_imagen.jpg',<br />
+								&nbsp;&nbsp;filter: [0.3, -0.21, 0.07, -0.19, 0.1, -0.01, -0.04, -0.02, -0.08],<br />
+								&rbrace;);
+							</code>
+						</pre>
+					</div>
+				</div>
+
+				<div>
+					<h3 class="text-2xl font-semibold">Ejemplo Completo</h3>
+					<p class="text-lg text-muted-foreground mt-2">
+						Aquí tienes un flujo completo de procesamiento usando CNNBlackBox:
+					</p>
+					<div class="mt-4 rounded-md">
+						<pre class="language-javascript text-xs bg-[#2b2b2b] text-[#f8f8f2] p-3 rounded-md overflow-auto">
+							<code>
+								const imageSrc = 'ruta_de_tu_imagen.jpg';<br /><br />
+								window.CNNBlackBox.startConvolution(&lbrace;<br />
+								&nbsp;&nbsp;container: 'cnn-container',<br />
+								&nbsp;&nbsp;imageSrc,<br />
+								&nbsp;&nbsp;filter: [0.3, -0.21, 0.07, -0.19, 0.1, -0.01, -0.04, -0.02, -0.08],<br />
+								&rbrace;);<br /><br />
+								window.CNNBlackBox.startReLU(&lbrace;<br />
+								&nbsp;&nbsp;container: 'relu-container',<br />
+								&nbsp;&nbsp;imageSrc,<br />
+								&rbrace;);<br /><br />
+								window.CNNBlackBox.startMaxPooling(&lbrace;<br />
+								&nbsp;&nbsp;container: 'max-pooling-container',<br />
+								&nbsp;&nbsp;imageSrc,<br />
+								&rbrace;);
+							</code>
+						</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Incluye Prism.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+</Layout>
